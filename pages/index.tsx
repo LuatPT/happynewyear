@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { NextPage } from 'next'
 import Head from 'next/head';
 import Image from 'next/image';
@@ -7,7 +8,6 @@ import Button from '@material-ui/core/Button';
 
 const Home: NextPage = () => {
   useEffect(function onFirstMount(){
-    // @ts-ignore
     window?.addEventListener('click', function() { document?.getElementById('player').play() }, { once: true });
     loadMessenger();
     countVisitor();
@@ -17,9 +17,9 @@ const Home: NextPage = () => {
   }
   function loadMessenger() {
     var chatbox = document?.getElementById('fb-customer-chat');
-      chatbox.setAttribute("page_id", "103999694475699");
-      chatbox.setAttribute("attribution", "biz_inbox");
-       window.fbAsyncInit = function() {
+      chatbox?.setAttribute("page_id", "103999694475699");
+      chatbox?.setAttribute("attribution", "biz_inbox");
+       window?.fbAsyncInit = function() {
         FB.init({
           xfbml: true,
           version: 'v12.0'
