@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 
 const Home: NextPage = () => {
   useEffect(function onFirstMount(){
-   window.addEventListener('click', function() { document.getElementById('player').play() }, { once: true });
+   window?.addEventListener('click', function() { document.getElementById('player').play() }, { once: true });
   },[])
   function getGift(){
    alert("AHhh!");
