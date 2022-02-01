@@ -7,9 +7,12 @@ import Button from '@material-ui/core/Button';
 
 const Home: NextPage = () => {
   useEffect(function onFirstMount(){
-    window?.addEventListener('click', function() { 
+    
+  if (window !== null && document !== null) {
+     window?.addEventListener('click', function() { 
       document?.getElementById('player').play() 
-    });
+    }); 
+  }
     loadMessenger();
     countVisitor();
   },[])
